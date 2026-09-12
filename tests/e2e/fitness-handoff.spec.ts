@@ -41,6 +41,8 @@ function fixture(responses: Response[]) {
 }
 
 test("Fitness handoff activates only on the canonical account runtime with exact evidence", () => {
+  expect(FITNESS_HANDOFF_ACTIVATION.fitnessConsumerMerge)
+    .toBe("f87f2dc7e0cc3cbead0eb3ea5ed7b9c592fdfa94");
   expect(fitnessHandoffRuntimeReady("https://account.fawxzzy.com")).toBe(true);
   for (const runtimeOrigin of [
     "http://127.0.0.1:3210",
